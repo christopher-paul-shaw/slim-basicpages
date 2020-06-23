@@ -12,7 +12,8 @@ use DI\Container;
 $container = new Container();
 $container->set('view', function() {
     return Twig::create(__DIR__ . '/../src/Views',
-        ['cache' => __DIR__ . '/../cache']);
+       []
+    );
 });
 
 AppFactory::setContainer($container);

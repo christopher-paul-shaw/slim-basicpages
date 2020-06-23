@@ -1,17 +1,41 @@
 <html>
-	<head>
- 			<title>{% block title %}{% endblock %} - My Webpage</title>
-	</head>
-	<body>
-
-		<nav>
-			<a href="/">Home</a> <a href="/about">About</a>
-		</nav>
-
-		<div id="content">{% block content %}{% endblock %}</div>
-
-
-	</body>
-
-
+   <head>
+      <title>{% block title %}{% endblock %} - My Webpage</title>
+      <link rel="stylesheet" media="screen" href="/css/toolkit.css" />
+   </head>
+   <body>
+      <link rel="stylesheet" media="screen" href="https://toolkit.chris-shaw.com/css/toolkit.css" />
+      <div class="c-nav u-theme-black">
+         <div class="o-container">
+            <div class="o-layout">
+               <div class="o-layout__item u-width--6-12">
+                  <div class="o-box c-box u-align__text ">
+                  </div>
+               </div>
+               <div class="o-layout__item u-width--6-12">
+                  <div class="o-box u-align__text--right">
+                     <label for="navigation" class="c-nav__toggle u-padding--small">Menu</label>
+                     <input type="checkbox" id="navigation" class="c-nav__toggle--checkbox">
+                     <div class="c-nav__menu u-theme-black">
+                        <label class="u-padding--small">
+                        <a href="/">Home</a>
+                        </label>  
+                        <label class="u-padding--small">
+                        <a href="/about">About</a>
+                        </label>      
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="o-container">
+         <div class="o-layout">
+         	<div class="o-layout__item u-width--12-12 u-margin--small">
+            {% block content %}{% endblock %}
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
