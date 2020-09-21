@@ -11,7 +11,8 @@ use DI\Container;
 
 $container = new Container();
 $container->set('view', function() {
-    return Twig::create(__DIR__ . '/../src/Views',
+    return Twig::create(
+		__DIR__ . '/../app/Views',
        []
     );
 });
@@ -21,5 +22,6 @@ AppFactory::setContainer($container);
 $app = AppFactory::create();
 $app->add(TwigMiddleware::createFromContainer($app));
 
-include __DIR__.'/../src/Routes.php';
+
+include __DIR__ . '/../app/Routes.php';
 $app->run();

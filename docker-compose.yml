@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  zones:
+    image: php:alpine
+    volumes:
+      - ./src/:/var/www/
+    working_dir: /var/www/public
+    command: php -S 0.0.0.0:8080
+    ports:
+      - 8080:8080
